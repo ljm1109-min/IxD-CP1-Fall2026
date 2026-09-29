@@ -1,0 +1,119 @@
+body {
+    margin: 0;
+    background-color: #fff5f7;
+    font-family: "Roboto", Arial, sans-serif;
+}
+
+header {
+    background-color: rgb(161, 241, 200);
+    padding: 16px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.8rem;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 16px;
+}
+
+.group-photo {
+    order: -1;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    object-position: bottom;
+    border-radius: 16px;
+}
+
+p {
+    color: darkblue;
+    line-height: 1.6;
+}
+
+@media (min-width: 744px) {
+    body {
+        background-color: #eef6f5;
+        font-family: "Open Sans", Arial, sans-serif;
+    }
+
+    header {
+        background-color: darkslategray;
+        color: white;
+        text-align: center;
+        padding: 32px;
+    }
+
+    header h1 {
+        font-size: 2.5rem;
+    }
+
+    main {
+        padding: 32px;
+    }
+
+    .group-photo {
+        width: 80%;
+        align-self: center;
+        aspect-ratio: 16 / 9;
+        border-radius: 0;
+    }
+
+    p {
+        columns: 2;
+        column-gap: 32px;
+        color: darkslategray;
+    }
+}
+
+@media (min-width: 1060px) {
+        body {
+        background-color: #f7f0fa;
+        font-family: "Playfair Display", Georgia, serif;
+    }
+
+    header {
+        background-color: transparent;
+        color: darkmagenta;
+        text-align: left;
+        width: 960px;
+        margin: 0 auto;
+        padding: 48px 0 16px;
+        border-bottom: 3px solid darkmagenta;
+    }
+
+    header h1 {
+        font-size: 3.5rem;
+        text-transform: uppercase;
+    }
+
+    main {
+        flex-direction: row;
+        align-items: flex-start;
+        width: 960px;
+        margin: 0 auto;
+        padding: 32px 0;
+        gap: 48px;
+    }
+
+    .info {
+        flex: 1;
+    }
+
+    .group-photo {
+        order: 1;
+        width: 360px;
+        aspect-ratio: 3 / 4;
+    }
+
+    p {
+        columns: 1;
+        color: darkmagenta;
+        font-size: 1.15rem;
+        line-height: 1.8;
+    }
+}
