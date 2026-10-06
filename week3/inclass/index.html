@@ -9,33 +9,13 @@
 <body id="docBody">
     <button id="colorChange">Change the color!</button>
     <button id="addText"> Add some text!</button>
-    <button id="toggleBtn">Also change color</button>
+    <button id="toggleBtn">Toggle Image</button>
+
+    <img src="images/quokka1.webp" alt="First Quokka Image" id="imageToToggle">
     
     <section id="textArea">
     
     </section>
-    <script>
-        let thisPage = document.getElementById("docBody")
-         
-        let colorBtn = document.getElementById("colorChange")
-        let textBtn = document.getElementById("addText")
-        let toggleBtn = document.getElementById("toggleBtn")
-
-        let changingColor = () => {
-            let redC = Math.random() * 255
-            let greenC = Math.random() * 255
-            let blueC = Math.random() * 255
-
-             thisPage.style.backgroundColor = "rgb(" + redC + ", " + blueC + ")"
-        }
-
-        let addingText = () => {
-
-        }
-        colorBtn.addEventListener("click", changingColor)
-        toggleBtn.addEventListener("click", changingColor)
-
-    </script>
-    
+    <script src="script.js"></script>
 </body>
 </html>
