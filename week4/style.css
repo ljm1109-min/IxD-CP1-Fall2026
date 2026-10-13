@@ -1,0 +1,144 @@
+:root {
+      --cream: #FBF6E2;
+      --paper: #FFFDF5;
+      --brown: #6B3518;
+      --spike: #A86E45;
+      --green-light: #D3DDC2;
+      --green: #B7C9A2;
+      --green-dark: #5E7F64;
+      --text: #3D2A1E;
+      --muted: #7A6656;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: var(--cream);
+      color: var(--text);
+      font-family: "Nunito", system-ui, sans-serif;
+      font-size: 18px;
+      line-height: 1.7;
+    }
+
+       /* Header */
+    header {
+      padding: 48px 24px 32px;
+      text-align: center;
+      background-color: var(--cream);
+    }
+    .label {
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--spike);
+      margin: 0 0 12px;
+    }
+    h1 {
+      font-family: "Fredoka", sans-serif;
+      font-weight: 600;
+      font-size: clamp(40px, 7vw, 72px);
+      line-height: 1.1;
+      color: var(--brown);
+      margin: 0 0 16px;
+    }
+    .subtitle {
+      max-width: 560px;
+      margin: 0 auto;
+      color: var(--muted);
+    }
+
+    /* Layout */
+    main {
+      background: var(--paper);
+      padding: 24px 24px 80px;
+    }
+    section {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 56px 0 8px;
+    }
+    nav {
+      max-width: 760px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      padding-top: 16px;
+    }
+    nav a {
+      text-decoration: none;
+      color: var(--brown);
+      background: var(--cream);
+      border: 2px solid var(--green);
+      border-radius: 999px;
+      padding: 4px 16px;
+      font-weight: 600;
+      font-size: 15px;
+    }
+    nav a:hover { background: var(--green-light); }
+
+    h2 {
+      font-family: "Fredoka", sans-serif;
+      font-weight: 600;
+      font-size: 34px;
+      color: var(--brown);
+      margin: 0 0 8px;
+    }
+    h2 .num {
+      color: var(--spike);
+      margin-right: 8px;
+    }
+    h3 {
+      font-family: "Fredoka", sans-serif;
+      font-weight: 500;
+      font-size: 22px;
+      color: var(--green-dark);
+      margin: 36px 0 4px;
+    }
+    p { margin: 0 0 16px; }
+    strong { color: var(--brown); }
+
+    figure {
+      margin: 28px 0;
+    }
+    figure img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 16px;
+      border: 3px solid var(--green-light);
+      background: var(--cream);
+    }
+    figcaption {
+      font-size: 15px;
+      color: var(--muted);
+      margin-top: 10px;
+      font-style: italic;
+    }
+
+    .pair {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    .pair figure { margin: 12px 0; }
+
+    .render {
+      background: var(--cream);
+      border-radius: 20px;
+      padding: 16px 16px 8px;
+      margin: 28px 0;
+    }
+    .render figure { margin: 0 0 12px; }
+    .render h3 { margin-top: 4px; }
+
+    footer {
+      text-align: center;
+      padding: 32px 24px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+   
