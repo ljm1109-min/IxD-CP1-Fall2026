@@ -41,7 +41,7 @@ Photos I took of the real situation, used as reference for the scene.
 - Downloaded a low-poly trash bin model from [Low Poly Pizza](https://poly.pizza).
 - Changed the bin colors to match WM's bins.
 - Added the WM logo to the front of the bin.
-- Added Solidify to give the bin walls thickness, because the inside wall was disappearing in the render.
+- Inset the edges of the bin to give the walls thickness. 
 
 ![Trash bin process](images/process-bin.png)
 
