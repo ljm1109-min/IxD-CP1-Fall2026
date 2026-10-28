@@ -15,6 +15,10 @@ The camera starts close on the full bin (the problem), then pulls back to reveal
 <!-- On github.com, open this README in the editor, put the cursor on the empty line below, and drag the .mp4 file in. GitHub will upload it and insert a link that plays as a video. Free accounts: keep the file under 10 MB (export at 720p in QuickTime if needed). -->
 
 
+https://github.com/user-attachments/assets/1f4f5715-4be0-41bc-9cf3-de6274305289
+
+
+
 
 ### Before and after feedback
 
