@@ -20,7 +20,7 @@ The camera starts close on the full bin (the problem), then pulls back to reveal
 
 | Before | After |
 | --- | --- |
-| ![Version 1](images/wm_prototype1.png) | ![Version 2](images/wm_prototype_v2.png) |
+| ![Version 1](images/wm_prototype1.png) | ![Version 2](images/wm_Prototype_3.png) |
 | Phone held upright, no ground shadows | Phone tilted back to a natural holding angle, shadows on the ground |
 
 <!-- Replace images/wm_prototype_v2.png with your new render's file name. -->
