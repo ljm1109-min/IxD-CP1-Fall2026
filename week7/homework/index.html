@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week07: Rhythmic Blend Grid</title>
+</head>
+<body>
+    <h1>Rhythmic Blend Grid</h1>
+    <iframe src="https://editor.p5js.org/ljm1109-min/full/KQxEniEze" width="900" height="700"></iframe>
+     <section>
+    <h2>About the Sketch</h2>
+    <p>
+      I started from the grid sketch we made in class and developed it into a rhythmic composition.
+      Every cell has the same three shapes (a rectangle, a circle, and a triangle), but each shape
+      changes a little depending on where its cell is. I used the column number (i) and row number (j)
+      to shift size and color, a sine wave to make the shapes ripple across the grid diagonally, and the
+      distance from the center of the canvas to make the circles largest in the middle and smaller
+      toward the edges. The shapes overlap in SCREEN blend mode, so the colors mix where they meet.
+    </p>
+  </section>
+
+  <section>
+    <h2>Problems and Solutions</h2>
+
+    <h3>1. From random noise to rhythm</h3>
+    <p>
+      In the class version, the triangles used <code>random()</code> for their color and all three corners.
+      Each cell looked completely different, so the triangles felt more like noise than rhythm.
+      After reading the article on repetition, pattern, and rhythm, I understood that rhythm is
+      repetition with variation that follows a rule.
+    </p>
+    <p>
+      I replaced the random triangles with rule-based changes. Their color now shifts step by step with
+      i and j, their size grows from top to bottom, and they rotate with a sine wave. I kept only a very
+      small random value (plus or minus 5 pixels) so the shapes still feel a little hand-made.
+    </p>
+
+    <h3>2. The grid lines disappeared in SCREEN mode</h3>
+    <p>
+      When I used <code>blendMode(SCREEN)</code>, the grid lines from class were no longer visible.
+      The default stroke color is black, and in SCREEN mode black does not change the colors underneath,
+      so the lines simply vanished.
+    </p>
+    <p>
+      I changed the line color to a semi-transparent white with <code>stroke(0, 0, 100, 40)</code>.
+      I also used <code>noStroke()</code> before drawing the shapes, so only the grid lines have an
+      outline and the shapes stay as soft blocks of color.
+    </p>
+
+    <h3>3. Flickering after adding movement</h3>
+    <p>
+      My first version drew the image only once. When I changed it to move, <code>draw()</code> started
+      running about 60 times per second. Two problems appeared. First, <code>random()</code> gave new
+      values every frame, so the triangles shook and flickered. Second, because the blend mode was still
+      SCREEN when I painted the background, the background did not fully clear the previous frame.
+    </p>
+    <p>
+      For the flickering, I added <code>randomSeed(0)</code> at the start of <code>draw()</code>.
+      This makes <code>random()</code> start from the same point every frame, so the small variations stay
+      the same. For the background, I switch to <code>BLEND</code> mode, paint the background, and then
+      switch back to SCREEN before drawing the shapes.
+    </p>
+  </section>
+
+  <section>
+    <h2>New Functions I Learned with an LLM</h2>
+    <p>
+      I worked through this sketch with Claude. These are the functions and values I used that we had not
+      covered in class yet.
+    </p>
+    <table>
+      <thead>
+        <tr>
+          <th>Function / value</th>
+          <th>What it does in my sketch</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>dist()</code></td>
+          <td>Measures how far each cell is from the center of the canvas (uses the Pythagorean theorem). I use it for the symmetry of the circles.</td>
+        </tr>
+        <tr>
+          <td><code>sin()</code></td>
+          <td>Creates a smooth wave that goes up and down between -1 and 1. I use it for the rippling and rotating motion.</td>
+        </tr>
+        <tr>
+          <td><code>frameCount</code></td>
+          <td>Counts the frames since the sketch started. Multiplying it by a small speed value makes the waves move over time.</td>
+        </tr>
+        <tr>
+          <td><code>randomSeed()</code></td>
+          <td>Makes <code>random()</code> give the same values every frame, so the triangles do not flicker.</td>
+        </tr>
+        <tr>
+          <td><code>push()</code>, <code>pop()</code>, <code>translate()</code>, <code>rotate()</code></td>
+          <td>Move the drawing point to the center of a cell and rotate only that triangle, without affecting the other shapes.</td>
+        </tr>
+        <tr>
+          <td><code>HALF_PI</code></td>
+          <td>A built-in value for 90 degrees. <code>rotate()</code> uses radians, where 180 degrees is PI.</td>
+        </tr>
+        <tr>
+          <td><code>%</code></td>
+          <td>Keeps the hue value inside 0 to 360, so the color goes around the color wheel again instead of going past red.</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+</body>
+</html>
